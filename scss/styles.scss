@@ -1,0 +1,60 @@
+@import "colors";
+@mixin center-text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//Global
+* {
+    color: $color-white;
+    font-size: 1.2rem;
+}
+
+.container {
+    background-color: $color-yellow;
+    border: 1px solid #000;
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1em;
+    width: 50%;
+
+    .left {
+        @include center-text;
+        background-color: $color-dark-green;
+        height: 100%;
+        width: 69%;
+        position: relative;
+    }
+
+    .right {
+        @include center-text;
+        background-color: $color-light-green;
+        height: 100%;
+        position: relative;
+        width: 29%;
+
+        .button {
+            background-color: $color-button;
+            color: $color-dark-green;
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 7em;
+            height: 2.5em;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 0.5em 2em;
+
+            //this is to center content vertically
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -120%);
+        }
+    }
+
+}
